@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
 import List from "./List";
 import useFetch from "../useFetch";
 
 const Home = () => {
-  const { error, pending, item } = useFetch('http://localhost:8000/blogs')
+  const { error, pending, item } = useFetch("http://localhost:8000/blogs");
 
   return (
     <div className="home">
       {error && <div>{error}</div>}
       {pending && <div>Loading</div>}
-      {item && (
-        <List item={item} head="All Blogs" />
-      )}
+      {item && <List item={item} head="All Blogs" />}
     </div>
   );
 };
