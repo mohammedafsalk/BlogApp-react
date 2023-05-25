@@ -1,9 +1,8 @@
-import React from 'react'
 
 function Create() {
   return (
     <div className="create">
-        <h1>Add New Blog</h1>
+        <h2>Add New Blog</h2>
     </div>
   )
 }
