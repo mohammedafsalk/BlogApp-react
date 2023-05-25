@@ -10,12 +10,15 @@ const Home = () => {
       id: 1,
     },
     { title: "My New Cookie", body: "lorem ipsum....", author: "Dev", id: 2 },
-    { title: "My New Table", body: "lorem ipsum....", author: "Claw", id: 3 },
+    { title: "My New Table", body: "lorem ipsum....", author: "Mario", id: 4 },
+    { title: "My New Bike", body: "lorem ipsum....", author: "Claw", id: 5 },
+    { title: "My New Google", body: "lorem ipsum....", author: "Dev", id: 6 },
+    { title: "My New Instgram", body: "lorem ipsum....", author: "Claw", id: 7 },
   ]);
 
   return (
     <div className="home">
-      <List item={item}/>
+      <List item={item} head="All Blogs"/>
     </div>
   );
 };
