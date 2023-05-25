@@ -3,6 +3,7 @@ import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import "./App.css";
 import Create from "./Components/Create";
+import BlogDetails from "./Components/BlogDetails";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
               <Home />
             </Route>
             <Route path="/create">
-              <Create/>
+              <Create />
+            </Route>
+            <Route path="/blogdetails/:id">
+              <BlogDetails />
             </Route>
           </Switch>
         </div>
