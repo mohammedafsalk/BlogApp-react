@@ -1,4 +1,5 @@
 import { useState } from "react";
+import List from "./List";
 
 const Home = () => {
   const [item, setItem] = useState([
@@ -12,17 +13,9 @@ const Home = () => {
     { title: "My New Table", body: "lorem ipsum....", author: "Claw", id: 3 },
   ]);
 
-  const handleclick = (title) => {
-    setItem(title);
-  };
   return (
     <div className="home">
-      {item.map((item) => (
-        <div className="blog-preview">
-        <h2>{item.title}</h2>
-        <p>{item.author}</p>
-        </div>
-      ))}
+      <List item={item}/>
     </div>
   );
 };
