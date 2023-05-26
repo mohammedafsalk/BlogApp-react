@@ -1,12 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../useFetch";
-import { useState } from "react";
-
 const BlogDetails = () => {
-  // const [title, setTitle] = useState("");
-  // const [body, setBody] = useState("");
-  // const [author, setAuthor] = useState("");
-
   const { id } = useParams();
   const navigate = useNavigate();
   const { item, pending, error } = useFetch(
