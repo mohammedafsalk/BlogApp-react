@@ -1,7 +1,12 @@
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../useFetch";
+import { useState } from "react";
 
 const BlogDetails = () => {
+  // const [title, setTitle] = useState("");
+  // const [body, setBody] = useState("");
+  // const [author, setAuthor] = useState("");
+
   const { id } = useParams();
   const navigate = useNavigate();
   const { item, pending, error } = useFetch(
@@ -9,11 +14,15 @@ const BlogDetails = () => {
   );
 
   const handleDelete = () => {
-    fetch(`http://localhost:8000/blogs/${item.id}`,{
-      method:'DELETE'
-    }).then(()=>{
-      navigate('/')
-    })
+    fetch(`http://localhost:8000/blogs/${item.id}`, {
+      method: "DELETE",
+    }).then(() => {
+      navigate("/");
+    });
+  };
+
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
   };
 
   return (
@@ -26,6 +35,7 @@ const BlogDetails = () => {
           <p>Written by {item.author}</p>
           <div>{item.body}</div>
           <button onClick={handleDelete}>Delete</button>
+          <button onClick={() => handleEdit(item.id)}>Edit</button>
         </article>
       )}
     </div>

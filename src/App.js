@@ -5,6 +5,7 @@ import "./App.css";
 import Create from "./Components/Create";
 import BlogDetails from "./Components/BlogDetails";
 import NotFound from "./Components/NotFound";
+import Edit from "./Components/Edit";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/edit/:id" element={<Edit />} />
             <Route path="/blogdetails/:id" element={<BlogDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
